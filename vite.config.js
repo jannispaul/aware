@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         index: "js/index.js",
         labs: "js/labs.js",
+        what: "js/what.js",
       },
       output: {
         entryFileNames: `assets/[name].js`,

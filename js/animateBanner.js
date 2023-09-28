@@ -14,7 +14,7 @@ export function animateBanner() {
       start: "top bottom",
       end: "bottom top",
       trigger: bannerTracks[0],
-      scrub: true,
+      scrub: 1,
     },
   });
 
@@ -26,7 +26,7 @@ export function animateBanner() {
       start: "top bottom",
       end: "bottom top",
       trigger: bannerTracks[1],
-      scrub: true,
+      scrub: 1,
     },
   });
 }
