@@ -1,7 +1,6 @@
 // @ts-check
 // Display images inline in Text
 export function moveImgInText() {
-  console.log("Hi");
   // Create spans with data-element='span-wrapper'
   let spans = document.querySelectorAll("[data-element='span-wrapper']");
 
