@@ -1,12 +1,9 @@
 // @ts-check
-import { animateHalfs } from "./animateHalfs.js";
-import { animateFooter } from "./animateFooter.js";
+
 import { moveImgInText } from "./moveImgInText.js";
 
 function init() {
-  moveImgInText;
-  animateHalfs();
-  animateFooter();
+  moveImgInText();
 }
 
 if (document.readyState == "loading") {
