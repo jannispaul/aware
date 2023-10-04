@@ -1,10 +1,10 @@
 // @ts-check
-import { animateHalfs } from "./animateHalfs.js";
-import { animateFooter } from "./animateFooter.js";
-import { moveImgInText } from "./moveImgInText.js";
+import { moveImgInText } from "./utils/moveImgInText.js";
+import { animateHalfs } from "./animations/animateHalfs.js";
+import { animateFooter } from "./animations/animateFooter.js";
 
 function init() {
-  moveImgInText;
+  moveImgInText();
   animateHalfs();
   animateFooter();
 }

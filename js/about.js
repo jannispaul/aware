@@ -1,6 +1,6 @@
 // @ts-check
 
-import { moveImgInText } from "./moveImgInText.js";
+import { moveImgInText } from "./utils/moveImgInText.js";
 
 function init() {
   moveImgInText();

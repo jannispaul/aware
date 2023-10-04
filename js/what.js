@@ -1,6 +1,6 @@
 // @ts-check
 
-import { cmsNest } from "./cmsNest.js";
+import { cmsNest } from "./utils/cmsNest.js";
 
 function init() {
   cmsNest();

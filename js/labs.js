@@ -1,6 +1,6 @@
 // @ts-check
-import { animateBanner } from "./animateBanner.js";
-import { animateFooter } from "./animateFooter.js";
+import { animateBanner } from "./animations/animateBanner.js";
+import { animateFooter } from "./animations/animateFooter.js";
 
 function init() {
   animateBanner();
