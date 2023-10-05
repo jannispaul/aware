@@ -5,9 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export function animateNav() {
   gsap.registerPlugin(ScrollTrigger);
 
-  const scollAnimation = gsap.timeline({ paused: true });
+  // On scroll turn background white, box shadow, and turn element black
+  const scrollAnimation = gsap.timeline({ paused: true });
+  let isScrolledToTop = true;
 
-  scollAnimation
+  scrollAnimation
     .to("[animate='nav']", {
       //   yPercent: -100,
       duration: 0.4,
@@ -38,8 +40,8 @@ export function animateNav() {
       },
       0
     );
-  // .progress(1);
 
+  // When page scrolled show scroll animation and reverse when up
   ScrollTrigger.create({
     trigger: "body",
     start: "top top",
@@ -47,37 +49,49 @@ export function animateNav() {
     markers: false,
     scrub: 0,
     onUpdate: (self) => {
-      self.direction === 1 ? scollAnimation.play() : scollAnimation.reverse();
+      console.log(self.direction);
+      if (self.direction === 1) {
+        isScrolledToTop = false;
+        scrollAnimation.play();
+      } else {
+        isScrolledToTop = true;
+        scrollAnimation.reverse();
+      }
     },
   });
 
-  const openAnimation = gsap.timeline({
-    paused: true,
-  });
+  //   const borderRadiusAnimation = gsap.timeline({
+  //     paused: true,
+  //   });
 
-  openAnimation.to(".navbar_component", {
+  const borderRadiusAnimation = gsap.to(".navbar_component", {
     borderRadius: 0,
-    duration: 0.2,
+    duration: 0.1,
+    // paused: true,
   });
 
-  // Stop body scroll when mobile menu is open
-  // const body = document.body;
-  // function letBodyScroll(bool) {
-  //     if (bool) {
-  //             body.style.overflow = 'hidden';
-  //     } else {
-  //         body.style.overflow = 'auto';
-  //     }
-  // }
+  //   const openAnimation = scrollAnimation;
+  //   .add(borderRadiusAnimation, "<");
 
+  //   Mutation observer variables
+  let menuIsOpen = false;
   const targetNode = document.querySelector(".w-nav-button");
   const config = { attributes: true, childList: false, subtree: false };
+
   const callback = function (mutationsList, observer) {
     for (let i = 0; i < mutationsList.length; i++) {
       if (mutationsList[i].type === "attributes") {
-        console.log(targetNode);
-        const menuIsOpen = mutationsList[i].target.classList.contains("w--open");
-        menuIsOpen ? openAnimation.play() : openAnimation.reverse();
+        // console.log(targetNode);
+        menuIsOpen = mutationsList[i].target.classList.contains("w--open");
+        if (menuIsOpen) {
+          scrollAnimation.play();
+          borderRadiusAnimation.play();
+        } else if (!menuIsOpen && isScrolledToTop) {
+          scrollAnimation.reverse();
+          gsap.delayedCall(0.3, () => borderRadiusAnimation.reverse());
+        } else {
+          gsap.delayedCall(0.3, () => borderRadiusAnimation.reverse());
+        }
       }
     }
   };
@@ -85,14 +99,12 @@ export function animateNav() {
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
 
-  // scrub: 1,
-
   //   ScrollTrigger.create({
   //     trigger: "body",
   //     start: "top top",
   //     end: "max",
   //     onUpdate: (self) => {
-  //       self.direction === 1 ? scollAnimation.play() : scollAnimation.reverse();
+  //       self.direction === 1 ? scrollAnimation.play() : scrollAnimation.reverse();
   //     },
   //   });
 
