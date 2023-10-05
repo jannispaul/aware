@@ -49,7 +49,7 @@ export function animateNav() {
     markers: false,
     scrub: 0,
     onUpdate: (self) => {
-      console.log(self.direction);
+      //   console.log(self.direction);
       if (self.direction === 1) {
         isScrolledToTop = false;
         scrollAnimation.play();

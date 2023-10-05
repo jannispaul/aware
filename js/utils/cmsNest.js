@@ -34,7 +34,7 @@ export function cmsNest() {
     if (!counter) return;
     let positionCount = list.children.length;
     if (positionCount > 0) {
-      console.log(list.children.length);
+      // console.log(list.children.length);
       counter.innerText = list.children.length;
     } else {
       counter.remove();

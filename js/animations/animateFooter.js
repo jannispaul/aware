@@ -15,5 +15,5 @@ export function animateFooter() {
       scrub: true,
     },
   });
-  console.log(animation);
+  // console.log(animation);
 }

@@ -4,9 +4,11 @@ import { animateHalfs } from "./animations/animateHalfs.js";
 import { animateFooter } from "./animations/animateFooter.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
 import { animateNav } from "./animations/animateNav.js";
+import { animateMenu } from "./animations/animateMenu.js";
 
 function init() {
   animateNav();
+  animateMenu();
   moveImgInText();
   animateHalfs();
   animateScaleUp();
