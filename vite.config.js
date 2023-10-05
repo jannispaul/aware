@@ -20,8 +20,8 @@ export default defineConfig({
         about: "js/about.js",
       },
       output: {
-        entryFileNames: `assets/[name].js`,
-        chunkFileNames: `assets/[name].js`,
+        entryFileNames: `js/[name].js`,
+        chunkFileNames: `js/[name].js`,
         assetFileNames: `assets/[name].[ext]`,
       },
     },
