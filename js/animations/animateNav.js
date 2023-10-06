@@ -18,7 +18,7 @@ export function animateNav() {
       boxShadow: "0px 1px 10px 0px rgba(0, 0, 0, 0.04)",
     })
     .to(
-      ".is-outline-light",
+      ".is-nav.is-outline-light",
       {
         color: "#000",
         background: "rgba(0,0,0,0.04)",
