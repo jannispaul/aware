@@ -18,7 +18,8 @@ export default defineConfig({
         labs: "js/labs.js",
         whatsIncluded: "js/whatsIncluded.js",
         aboutUs: "js/aboutUs.js",
-        // business: "js/aware-for-business.js",
+        awareForBusiness: "js/awareForBusiness.js",
+        howItWorks: "js/howItWorks.js",
       },
       output: {
         entryFileNames: `js/[name].js`,
