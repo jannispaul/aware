@@ -4,6 +4,9 @@ dependencies:
   gsap:
     specifier: ^3.12.2
     version: 3.12.2
+  tiny-slider:
+    specifier: ^2.9.4
+    version: 2.9.4
   vite:
     specifier: ^4.4.9
     version: 4.4.9
@@ -280,6 +283,10 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /tiny-slider@2.9.4:
+    resolution: {integrity: sha512-LAs2kldWcY+BqCKw4kxd4CMx2RhWrHyEePEsymlOIISTlOVkjfK40sSD7ay73eKXBLg/UkluAZpcfCstimHXew==}
     dev: false
 
   /vite@4.4.9:

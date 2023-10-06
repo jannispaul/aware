@@ -2,11 +2,21 @@
 import { animateBanner } from "./animations/animateBanner.js";
 import { animateFooter } from "./animations/animateFooter.js";
 import { onAllPages } from "./utils/onAllPages.js";
+import { createSlider } from "./utils/createSlider.js";
 
 function init() {
   onAllPages();
   animateBanner();
   animateFooter();
+  let sliderOptions = {
+    container: ".team_cms-list",
+    items: 3,
+    slideBy: 1,
+    autoplay: false,
+    prevButton: ".team_slider-arrow.is-prev",
+    nextButton: ".team_slider-arrow.is-next",
+  };
+  createSlider(sliderOptions);
 }
 
 if (document.readyState == "loading") {

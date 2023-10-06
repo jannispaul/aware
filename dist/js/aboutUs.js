@@ -1,0 +1,1 @@
+import{m as t}from"./moveImgInText.js";import{o}from"./onAllPages.js";import{c as i}from"./createSlider.js";function e(){o(),t(),i({container:".team_cms-list",items:3,slideBy:1,autoplay:!1,prevButton:".team_slider-arrow.is-prev",nextButton:".team_slider-arrow.is-next"})}document.readyState=="loading"?document.addEventListener("DOMContentLoaded",e):e();
