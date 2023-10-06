@@ -15,7 +15,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: "js/index.js",
-        labs: "js/labs.js",
+        locations: "js/locations.js",
         whatsIncluded: "js/whatsIncluded.js",
         aboutUs: "js/aboutUs.js",
         awareForBusiness: "js/awareForBusiness.js",
