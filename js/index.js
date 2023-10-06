@@ -1,17 +1,18 @@
 // @ts-check
 import { moveImgInText } from "./utils/moveImgInText.js";
+import { onAllPages } from "./utils/onAllPages.js";
 import { animateHalfs } from "./animations/animateHalfs.js";
 import { animateFooter } from "./animations/animateFooter.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
-import { animateNav } from "./animations/animateNav.js";
-import { animateMenu } from "./animations/animateMenu.js";
+
+import { animateQuotes } from "./animations/animateQuotes.js";
 
 function init() {
-  animateNav();
-  animateMenu();
+  onAllPages();
   moveImgInText();
   animateHalfs();
   animateScaleUp();
+  animateQuotes();
   animateFooter();
 }
 

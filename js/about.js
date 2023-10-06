@@ -1,8 +1,10 @@
 // @ts-check
 
 import { moveImgInText } from "./utils/moveImgInText.js";
+import { onAllPages } from "./utils/onAllPages.js";
 
 function init() {
+  onAllPages();
   moveImgInText();
 }
 
