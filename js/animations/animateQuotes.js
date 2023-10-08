@@ -12,10 +12,11 @@ export function animateQuotes(params) {
   let quoteListItems = Array.from(document.querySelectorAll("[data-element='quote']"));
   const height = "16.5rem";
   const width = "12rem";
-  const largeWidth = "20rem";
+  const largeWidth = "23.75rem";
   const largeHeight = "33rem";
   const originalItemCount = quoteListItems.length;
   const count = 3;
+  let animationIsRunning = false;
 
   // Duplicate quotes for seamless looping
   function cloneNodes() {
@@ -56,6 +57,17 @@ export function animateQuotes(params) {
   }
   // On click run handler
   function handleClick(currentItem) {
+    // Prevent animation from being trigger while its running
+    animationIsRunning = true;
+    setTimeout(() => {
+      animationIsRunning = false;
+    }, 1000);
+
+    // Set aria current to false on all items
+    quoteListItems.forEach((item) => (item.ariaCurrent = false));
+    // Set current item to aria current
+    currentItem.ariaCurrent = true;
+
     // Scale up the item that got clicked
     gsap.to(currentItem, {
       scale: 1.05,
@@ -103,7 +115,6 @@ export function animateQuotes(params) {
 
     // Fade in the clone on the left side
     gsap.delayedCall(delay, () => {
-      //   if (itemClones.length === quoteListItems.length / 2) return;
       itemClones.forEach((item) => {
         gsap.to(item, {
           opacity: 1,
@@ -118,15 +129,17 @@ export function animateQuotes(params) {
   function fadeOutItems(clickIndex, duration) {
     const itemsAfter = quoteListItems.slice(clickIndex + 1);
     // All items after the item get moved to the right
-    itemsAfter.forEach((item) => {
+    itemsAfter.forEach((item, index) => {
       //   console.log("fading out", item, clickIndex);
-      gsap.to(item, {
-        translateX: "+=" + 200,
-        opacity: 0,
-        duration: duration,
-        ease: "power1.inOut",
-        autoAlpha: 0,
-      });
+      gsap
+        .timeline()
+        .to(item, {
+          translateX: "+=" + 200 * (1 + index / 5),
+          duration: duration,
+          ease: "power1.inOut",
+        })
+        .to(item, { opacity: 0, ease: false, duration: duration }, 0)
+        .to(item, { autoAlpha: 0 });
     });
   }
 
@@ -168,10 +181,9 @@ export function animateQuotes(params) {
   function updateQuoteCopy(clickIndex) {
     // Fade copy out to the right
     gsap.to(quoteContainer, {
-      xPercent: 50,
       opacity: 0,
-      duration: 0.8,
-      ease: "power1.in",
+      duration: 0.5,
+      ease: false,
     });
 
     gsap.delayedCall(1, () => {
@@ -180,19 +192,30 @@ export function animateQuotes(params) {
       quoteContainer.replaceChildren(...copyWrapper.cloneNode(true).children);
 
       // Fade copy in from the left
-      gsap.fromTo(
-        quoteContainer,
-        {
-          xPercent: -50,
-          opacity: 0,
-        },
-        {
-          xPercent: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power1.out",
-        }
-      );
+      gsap
+        .timeline()
+        .fromTo(
+          quoteContainer,
+          {
+            xPercent: -80,
+            translateX: 0,
+            opacity: 0,
+          },
+          {
+            xPercent: 0,
+            duration: 1,
+            ease: "power1.out",
+          }
+        )
+        .to(
+          quoteContainer,
+          {
+            opacity: 1,
+            duration: 1,
+            ease: "power1.in",
+          },
+          0
+        );
     });
   }
 
@@ -202,6 +225,7 @@ export function animateQuotes(params) {
   init();
 
   function handleMouseEnter(hoveredItem) {
+    if (hoveredItem.ariaCurrent === "true") return;
     // prevent active item from scaling
     gsap.timeline().to(hoveredItem, {
       scale: 0.9,
@@ -222,22 +246,18 @@ export function animateQuotes(params) {
   // Event listeners
   document.addEventListener("click", (event) => {
     // Early return if its not a quote
-    if (!event.target.closest("[data-element='quote']")) return;
+    if (!event.target.closest("[data-element='quote']") || animationIsRunning) return;
     handleClick(event.target.closest("[data-element='quote']"));
   });
 
   quoteListItems.forEach((item) => {
     item.addEventListener("mouseenter", (event) => {
-      // Early return if its not a quote
-      if (!event.target.closest("[data-element='quote']")) return;
       handleMouseEnter(event.target.closest("[data-element='quote']"));
     });
   });
 
   quoteListItems.forEach((item) => {
     item.addEventListener("mouseleave", (event) => {
-      // Early return if its not a quote
-      // if (!event.target.closest("[data-element='quote']")) return;
       handleMouseLeave(event.target.closest("[data-element='quote']"));
     });
   });
