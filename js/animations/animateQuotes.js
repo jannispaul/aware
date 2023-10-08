@@ -7,7 +7,6 @@ export function animateQuotes(params) {
   const quoteContainer = document.querySelector("[data-element='quote-container']");
   // Quote image list
   const quoteList = document.querySelector("[data-element='quote-list']");
-  quoteList.parentNode.style.border = "2px solid red";
 
   // All quotes
   let quoteListItems = Array.from(document.querySelectorAll("[data-element='quote']"));
