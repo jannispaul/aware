@@ -150,7 +150,7 @@ export function animateQuotes(params) {
 
     // duration === 0 ? transformdistance : transformdistance;
     // let correctedDistance = duration === 0 ? transformdistance : transformdistance - convertRemToPixels(parseFloat(largeWidth) - parseFloat(width));
-    console.log("transform", transformdistance, "sizeOffset", convertRemToPixels(parseFloat(largeWidth) - parseFloat(width)));
+    // console.log("transform", transformdistance, "sizeOffset", convertRemToPixels(parseFloat(largeWidth) - parseFloat(width)));
     // If the animation should run without transition, then dont delay it
     let delay = duration === 0 ? 0 : 0.5;
     // Animate the items to their new position

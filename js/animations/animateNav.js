@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function animateNav() {
   gsap.registerPlugin(ScrollTrigger);
+  const navButton = document.querySelector(".is-nav.is-outline-light");
 
   // On scroll turn background white, box shadow, and turn element black
   const scrollAnimation = gsap.timeline({ paused: true });
@@ -17,15 +18,6 @@ export function animateNav() {
       color: "#000",
       boxShadow: "0px 1px 10px 0px rgba(0, 0, 0, 0.04)",
     })
-    .to(
-      ".is-nav.is-outline-light",
-      {
-        color: "#000",
-        background: "rgba(0,0,0,0.04)",
-        borderColor: "#000",
-      },
-      0
-    )
     .to(
       ".navbar_logo-link",
       {
@@ -53,9 +45,15 @@ export function animateNav() {
       if (self.direction === 1) {
         isScrolledToTop = false;
         scrollAnimation.play();
+        // Change button to dark button
+        navButton?.classList.remove("is-outline-light");
+        navButton?.classList.add("is-outline");
       } else {
         isScrolledToTop = true;
         scrollAnimation.reverse();
+        // Change button to ligth button
+        navButton?.classList.remove("is-outline");
+        navButton?.classList.add("is-outline-light");
       }
     },
   });

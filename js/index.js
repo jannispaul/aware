@@ -6,6 +6,7 @@ import { animateFooter } from "./animations/animateFooter.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
 
 import { animateQuotes } from "./animations/animateQuotes.js";
+import { animateHow } from "./animations/animateHow.js";
 
 function init() {
   onAllPages();
@@ -14,6 +15,7 @@ function init() {
   animateScaleUp();
   animateQuotes();
   animateFooter();
+  animateHow();
 }
 
 if (document.readyState == "loading") {
