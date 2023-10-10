@@ -4,7 +4,7 @@ import { onAllPages } from "./utils/onAllPages.js";
 import { animateHalfs } from "./animations/animateHalfs.js";
 import { animateFooter } from "./animations/animateFooter.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
-
+import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateQuotes } from "./animations/animateQuotes.js";
 import { animateHow } from "./animations/animateHow.js";
 
@@ -13,9 +13,10 @@ function init() {
   moveImgInText();
   animateHalfs();
   animateScaleUp();
-  animateQuotes();
-  animateFooter();
   animateHow();
+  animateQuotes();
+  animateImageScale();
+  animateFooter();
 }
 
 if (document.readyState == "loading") {
