@@ -16,7 +16,6 @@ export function animateMenu(isMobile) {
   // Get all images from image-wrapper
   let images = document.querySelector("[animate='image-wrapper']")?.childNodes;
   if (!links || !images) return;
-  // console.log(links, images);
 
   // Function to show the image of the currently active menu item
   function showCurrentImage(params) {
@@ -29,8 +28,6 @@ export function animateMenu(isMobile) {
           gsap.to(images[index], { zIndex: 2, opacity: 1, duration: 0.3 });
         }
       } else {
-        // @ts-ignore
-        console.log("hiding", index, images[index])
         // @ts-ignore
         gsap.to(images[index], { zIndex: "0", duration: 0 });
         // @ts-ignore
@@ -73,10 +70,9 @@ export function animateMenu(isMobile) {
   // Function to animate the dot to a navbar link
   function updateDot(el) {
     if (isMobile) return;
-    // console.log(event.target)
-        activeMenu(el)
+    animateDotToElement(el)
 
-    function activeMenu(el) {
+    function animateDotToElement(el) {
       // let underline = el.querySelector(".nav_underline")
       let state = Flip.getState(dotElement);
       el.appendChild(dotElement);
