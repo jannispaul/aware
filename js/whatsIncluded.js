@@ -2,10 +2,13 @@
 
 import { cmsNest } from "./utils/cmsNest.js";
 import { onAllPages } from "./utils/onAllPages.js";
+import { updateModalCopy } from "./utils/updateModalCopy.js";
+
 
 function init() {
   onAllPages();
   cmsNest();
+  updateModalCopy();
 }
 
 if (document.readyState == "loading") {

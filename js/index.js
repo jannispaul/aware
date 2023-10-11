@@ -11,10 +11,13 @@ import { animateHow } from "./animations/animateHow.js";
 function init() {
   onAllPages();
   moveImgInText();
-  animateHalfs();
+  // Only run on desktop
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    animateHalfs();
+    animateQuotes();
+    animateHow();
+  }
   animateScaleUp();
-  animateHow();
-  animateQuotes();
   animateImageScale();
   animateFooter();
 }
