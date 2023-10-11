@@ -105,6 +105,7 @@ export function animateMenu(isMobile) {
   function setDotToCurrent(){
     if(!linkWrapper) return;
     let currentLink = linkWrapper.querySelector(".w--current") ;
+    if (!currentLink) return
     updateDot(currentLink)
   }
   setDotToCurrent();

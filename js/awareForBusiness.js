@@ -1,9 +1,11 @@
 // @ts-check
 
+import { animateBusinessHeader } from "./animations/animateBusinessHeader.js";
 import { onAllPages } from "./utils/onAllPages.js";
 
 function init() {
   onAllPages();
+  animateBusinessHeader();
 }
 
 if (document.readyState == "loading") {
