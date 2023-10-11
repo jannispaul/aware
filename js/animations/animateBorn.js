@@ -6,7 +6,7 @@ export function animateBorn() {
   gsap.registerPlugin(ScrollTrigger);
   let bornSection = document.querySelector("[animate='born-section']");
   let bornInner = document.querySelector("[animate='born-inner']");
-  let bornImage = document.querySelector("[animate='born-image']");
+//   let bornImage = document.querySelector("[animate='born-image']");
   let headingOne = document.querySelector("[animate='heading-1']");
   let headingTwo = document.querySelector("[animate='heading-2']");
 
@@ -33,7 +33,7 @@ export function animateBorn() {
           scrub: true,
           pin: bornInner,
           end: "bottom",
-          markers: true
+        //   markers: true
         }
       })
     //   .to(bornImage, { yPercent: 0} )
