@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // https://greensock.com/docs/v3/Eases
 // https://greensock.com/docs/v3/GSAP/Timeline/addLabel()
+// https://gsap.com/community/forums/topic/26587-scrolltrigger-with-horizontal-items-and-scale-updown-effect/
 
 export function animateHow() {
   gsap.registerPlugin(ScrollTrigger);
