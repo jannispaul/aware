@@ -1,1 +1,0 @@
-import{g as o,S as r}from"./onAllPages.js";function e(){o.registerPlugin(r),o.from("footer",{y:"-20%",ease:"none",duration:1,scrollTrigger:{start:"top bottom",end:"bottom bottom",trigger:"footer",scrub:!0}})}export{e as a};

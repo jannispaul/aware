@@ -5,8 +5,8 @@ export function animateLoader(isMobile) {
     // Get saved data from sessionStorage
     let loaderSeen = sessionStorage.getItem("loaderSeen");
     let loadingWrapper = document.querySelector("[animate='loader']");
-    console.log(loadingWrapper);
-    loaderSeen = false;
+    // console.log(loadingWrapper);
+    // loaderSeen = false;
 
     //
     if (!loaderSeen) {
