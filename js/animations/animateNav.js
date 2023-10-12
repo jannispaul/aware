@@ -1,12 +1,31 @@
 // @ts-check
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { animateNavButton } from "./animateNavButton";
 
 export function animateNav() {
   gsap.registerPlugin(ScrollTrigger);
   const navButton = document.querySelector(".is-nav.is-outline-light");
 
+  // Animation 1
+  // On Scroll down hide nav
+  const hideNavAnimation = gsap
+    .from("[animate='nav']", {
+      yPercent: -100,
+      paused: true,
+      duration: 0.3,
+    })
+    .progress(1);
+
+  ScrollTrigger.create({
+    start: "top top",
+    end: 99999,
+    onUpdate: (self) => {
+      self.direction === -1 ? hideNavAnimation.play() : hideNavAnimation.reverse();
+    },
+  });
+  // End of Animation 1
+
+  // Animation 2
   // On scroll turn background white, box shadow, and turn element black
   const scrollAnimation = gsap.timeline({ paused: true });
   let isScrolledToTop = true;
@@ -39,9 +58,10 @@ export function animateNav() {
     trigger: "body",
     start: "top top",
     end: "+=200",
-    markers: false,
-    scrub: 0,
+    // markers: true,
+    scrub: 1,
     onUpdate: (self) => {
+      if (self.progress < 0.3) return;
       //   console.log(self.direction);
       if (self.direction === 1) {
         isScrolledToTop = false;
