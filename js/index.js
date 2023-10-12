@@ -12,7 +12,7 @@ function init() {
   onAllPages();
   moveImgInText();
   // Only run on desktop
-  if (window.matchMedia('(min-width: 768px)').matches) {
+  if (window.matchMedia("(min-width: 768px)").matches) {
     animateHalfs();
     animateQuotes();
     animateHow();

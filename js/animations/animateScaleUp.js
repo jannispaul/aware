@@ -15,7 +15,7 @@ export function animateScaleUp() {
         end: "bottom top",
         trigger: scaleImage,
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     })
     .set(scaleImage, {
