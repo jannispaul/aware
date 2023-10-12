@@ -12,7 +12,7 @@ export function animateMenu(isMobile) {
   // Get all links from link-wrapper
   let linkWrapper = document.querySelector("[animate='link-wrapper']");
   let links = linkWrapper?.querySelectorAll("a");
-  let dotElement = document.querySelector("[animate='dot']")
+  let dotElement = document.querySelector("[animate='dot']");
   // Get all images from image-wrapper
   let images = document.querySelector("[animate='image-wrapper']")?.childNodes;
   if (!links || !images) return;
@@ -22,8 +22,8 @@ export function animateMenu(isMobile) {
     links?.forEach((link, index) => {
       if (link.classList.contains("w--current")) {
         // Check if the image is not already shown
-        // @ts-ignore 
-        if(gsap.getProperty(images[index],"opacity")!== 1){
+        // @ts-ignore
+        if (gsap.getProperty(images[index], "opacity") !== 1) {
           // @ts-ignore
           gsap.to(images[index], { zIndex: 2, opacity: 1, duration: 0.3 });
         }
@@ -47,8 +47,8 @@ export function animateMenu(isMobile) {
   function updateImage(event) {
     gsap.to(dotElement, {
       opacity: 1,
-      duration: 0.5
-    })
+      duration: 0.5,
+    });
     hasBeenUpdated = true;
     links?.forEach((link, index) => {
       if (link === event.currentTarget) {
@@ -70,7 +70,7 @@ export function animateMenu(isMobile) {
   // Function to animate the dot to a navbar link
   function updateDot(el) {
     if (isMobile) return;
-    animateDotToElement(el)
+    animateDotToElement(el);
 
     function animateDotToElement(el) {
       // let underline = el.querySelector(".nav_underline")
@@ -79,14 +79,13 @@ export function animateMenu(isMobile) {
       Flip.from(state, {
         duration: 0.4,
         opacity: 1,
-        ease: "Circ.easeInOut"
+        ease: "Circ.easeInOut",
       });
+    }
   }
-
-  }
-  function mouseEnterHandler(event){
+  function mouseEnterHandler(event) {
     updateImage(event);
-    updateDot(event.target)
+    updateDot(event.target);
   }
 
   // Handle the mouse leave
@@ -94,19 +93,27 @@ export function animateMenu(isMobile) {
     hasBeenUpdated = false;
     // If there is no other link hovered within 500ms then change back to currently active link's image
     setTimeout(() => {
-      if(!hasBeenUpdated){
+      if (!hasBeenUpdated) {
         showCurrentImage();
         setDotToCurrent();
-      } 
+      }
     }, 500);
   }
 
   // Initialize dot to current menu item
-  function setDotToCurrent(){
-    if(!linkWrapper) return;
-    let currentLink = linkWrapper.querySelector(".w--current") ;
-    if (!currentLink) return
-    updateDot(currentLink)
+  function setDotToCurrent() {
+    if (!linkWrapper) return;
+    let currentLink = linkWrapper.querySelector(".w--current");
+
+    // If there is a current link, update the dot
+    if (currentLink) {
+      updateDot(currentLink);
+    } else {
+      // Otherwise hide it
+      gsap.set(dotElement, {
+        opacity: 0,
+      });
+    }
   }
   setDotToCurrent();
 
