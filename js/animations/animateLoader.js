@@ -26,7 +26,7 @@ export function animateLoader(isMobile) {
     const images = Array.from(document.querySelectorAll("[animate='loader'] img"));
     const wrapper = document.querySelector("[animate='load-image-wrapper']");
     const logoMask = document.querySelector("[animate='logo-mask']");
-    console.log(images);
+    // console.log(images);
     // Last images is shown on top, therefore reverse array first
     // images.reverse().forEach((image, index) => {
     //   console.log(image);

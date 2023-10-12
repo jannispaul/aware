@@ -18,7 +18,8 @@ export function animateHow() {
   const numberColorInactive = getComputedStyle(document.documentElement).getPropertyValue("--neutrals--300");
 
   // Get height of Nav
-  const navHeight = gsap.getProperty("[animate='nav']", "height");
+  // const navHeight = gsap.getProperty("[animate='nav']", "height");
+  const navHeight = 0;
 
   // Function to set min height of section
   function setSectionHeight() {

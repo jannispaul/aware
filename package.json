@@ -16,5 +16,8 @@
     "gsap": "^3.12.2",
     "tiny-slider": "^2.9.4",
     "vite": "^4.4.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.0.1"
   }
 }

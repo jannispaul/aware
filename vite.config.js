@@ -1,5 +1,6 @@
 // vite.config.js
 import { defineConfig } from "vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
 
 export default defineConfig({
   server: {
@@ -10,7 +11,7 @@ export default defineConfig({
       protocol: "ws",
     },
   },
-  plugins: [],
+  plugins: [process.env.NODE_ENV === "development" ? [basicSsl()] : []],
   build: {
     rollupOptions: {
       input: {
