@@ -8,6 +8,8 @@ export function animateHalfs() {
 
   let leftHalf = document.querySelector("[animate='left-half']");
   let rightHalf = document.querySelector("[animate='right-half']");
+  let videoLeft = leftHalf?.querySelector("video");
+  let videoRight = rightHalf?.querySelector("video");
 
   if (!leftHalf || !rightHalf) return;
 
@@ -16,9 +18,21 @@ export function animateHalfs() {
 
   let growRight = gsap.timeline({ paused: true }).to(leftHalf.querySelector("h3"), { opacity: 0, duration: 0.4, display: "none" }).to(rightHalf, { duration: 0.7, flex: "1.5 1 0%", ease: "power2.inOut" }, 0);
 
-  leftHalf.addEventListener("mouseenter", () => growLeft.play());
-  leftHalf.addEventListener("mouseleave", () => growLeft.reverse());
+  leftHalf.addEventListener("mouseenter", () => {
+    growLeft.play();
+    videoRight?.pause();
+  });
+  leftHalf.addEventListener("mouseleave", () => {
+    growLeft.reverse();
+    videoRight?.play();
+  });
 
-  rightHalf.addEventListener("mouseenter", () => growRight.play());
-  rightHalf.addEventListener("mouseleave", () => growRight.reverse());
+  rightHalf.addEventListener("mouseenter", () => {
+    growRight.play();
+    videoLeft?.pause();
+  });
+  rightHalf.addEventListener("mouseleave", () => {
+    growRight.reverse();
+    videoLeft?.play();
+  });
 }
