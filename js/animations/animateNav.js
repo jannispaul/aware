@@ -1,6 +1,7 @@
 // @ts-check
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { animateNavButton } from "./animateNavButton";
 
 export function animateNav() {
   gsap.registerPlugin(ScrollTrigger);
@@ -93,6 +94,7 @@ export function animateNav() {
       }
     }
   };
+
   if (!targetNode) return;
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
