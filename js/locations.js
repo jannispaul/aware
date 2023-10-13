@@ -2,15 +2,15 @@
 import { animateBanner } from "./animations/animateBanner.js";
 import { animateFooter } from "./animations/animateFooter.js";
 import { onAllPages } from "./utils/onAllPages.js";
-import { animateScaleUp } from "./animations/animateScaleUp.js";
+import { animateCardToFull } from "./animations/animateCardToFull.js";
 import { createSlider } from "./utils/createSlider.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
 
 function init() {
   onAllPages();
   animateBanner();
-  animateScaleUp();
-  animateImageScale()
+  animateCardToFull();
+  animateImageScale();
   animateFooter();
   let sliderOptions = {
     container: ".team_cms-list",

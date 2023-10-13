@@ -3,7 +3,7 @@ import { moveImgInText } from "./utils/moveImgInText.js";
 import { onAllPages } from "./utils/onAllPages.js";
 import { animateHalfs } from "./animations/animateHalfs.js";
 // import { animateFooter } from "./animations/animateFooter.js";
-import { animateScaleUp } from "./animations/animateScaleUp.js";
+import { animateCardToFull } from "./animations/animateCardToFull.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateQuotes } from "./animations/animateQuotes.js";
 import { animateHow } from "./animations/animateHow.js";
@@ -16,7 +16,7 @@ function init() {
   onAllPages();
   moveImgInText();
   headerVideoProgress();
-  animateScaleUp();
+  animateCardToFull();
   animateImageScale();
   // animateFooter();
 
