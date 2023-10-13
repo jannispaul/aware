@@ -7,10 +7,12 @@ import { animateScaleUp } from "./animations/animateScaleUp.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateQuotes } from "./animations/animateQuotes.js";
 import { animateHow } from "./animations/animateHow.js";
+import { headerVideoProgress } from "./utils/headerVideoProgress.js";
 
 function init() {
   onAllPages();
   moveImgInText();
+  headerVideoProgress();
   // Only run on desktop
   if (window.matchMedia("(min-width: 768px)").matches) {
     animateHalfs();
