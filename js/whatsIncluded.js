@@ -4,11 +4,13 @@ import { cmsNest } from "./utils/cmsNest.js";
 import { createToolTip } from "./utils/createToolTip.js";
 import { getScreenSize } from "./utils/getScreenSize.js";
 import { onAllPages } from "./utils/onAllPages.js";
+import { tabsListCount } from "./utils/tabsListCount.js";
 import { updateModalCopy } from "./utils/updateModalCopy.js";
 
 function init() {
   onAllPages();
   cmsNest();
+  tabsListCount();
   updateModalCopy();
 
   // Only on desktop

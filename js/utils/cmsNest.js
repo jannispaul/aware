@@ -6,7 +6,7 @@ export function cmsNest() {
   // Optional
   // Set [data-identifier='XXX'] for mulitple lists should be set on source and target items (and total count)
   // Set [data-element='total-count'] on element for total count
-  // Set [data-element='position-count']" on element in primary list for nested item count
+  // Set [data-element='list-count']" on element in primary list for nested item count
 
   // Get all nest targets in parent collection list
   const targetItems = Array.from(document.querySelectorAll("[data-element='nest-target']"));
@@ -34,8 +34,8 @@ export function cmsNest() {
     // Get all items that have data-category set
     // data-category needs to be set on cms items
     const items = source.querySelectorAll("[data-category]");
-    const numberOfPositions = items.length;
-    // if (countIndicators) countIndicators[0].innerText = numberOfPositions;
+    // const numberOfItems = items.length;
+    // if (countIndicators) countIndicators[0].innerText = numberOfItems;
 
     // Append items to category
     items.forEach((item) => {
@@ -49,10 +49,10 @@ export function cmsNest() {
 
     // Count items in category and if there are no positions, hide the category
     targetList.forEach((list) => {
-      let counter = list.parentNode.parentNode.querySelector("[data-element='position-count']");
+      let counter = list.parentNode.parentNode.querySelector("[data-element='list-count']");
       if (!counter) return;
-      let positionCount = list.children.length;
-      if (positionCount > 0) {
+      let numberOfItems = list.children.length;
+      if (numberOfItems > 0) {
         counter.innerText = list.children.length;
       } else {
         counter.remove();
