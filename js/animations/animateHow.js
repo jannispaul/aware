@@ -49,20 +49,18 @@ export function animateHow() {
     .set(steps.slice(1), {
       flex: "0 1 0%",
     })
-    // .set(
-    //   images.slice(1),
-    //   {
-    //     opacity: 0,
-    //   },
-    //   "<"
-    // )
+
     // Step 1 Animation
     // Scale up first step
-    .to("[animate='step-1']", {
-      flex: "1 0 10%",
-      duration: 1,
-      ease: "power1.inOut",
-    })
+    .set(
+      "[animate='step-1']",
+      {
+        flex: "1 0 10%",
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      0
+    )
     .to(
       images[0],
       {
@@ -337,13 +335,10 @@ export function animateHow() {
     // Hide all images other than image 1
     gsap.set(images.slice(1), { opacity: 0 });
 
-    // Set first step
-    gsap.set(steps[0], { flex: "1 0 10%" });
-
     // Set other steps
     steps.slice(1).forEach((step, index) => {
       gsap.set(step, {
-        flex: "1 1 0%",
+        flex: "0 1 0%",
       });
       gsap.set(step.querySelector("[animate='heading']"), {
         display: "none",
@@ -357,6 +352,10 @@ export function animateHow() {
         color: numberColorInactive,
       });
     });
+
+    // Set first step
+    gsap.set(steps[0], { flex: "1 0 10%" });
+    console.log(steps[0]);
     // Set height of section
     setSectionHeight();
   }
