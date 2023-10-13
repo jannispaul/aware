@@ -38,8 +38,9 @@ export function animateHow() {
       scrollTrigger: {
         trigger: section,
         start: "top " + navHeight,
-        end: "+=3000 bottom",
-        pin: section,
+        end: "bottom bottom",
+        // end: "+=3000 bottom",
+        // pin: section,
         // markers: true,
         scrub: 1,
       },

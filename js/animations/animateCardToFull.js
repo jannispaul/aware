@@ -4,13 +4,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function animateCardToFull() {
   gsap.registerPlugin(ScrollTrigger);
-  let scaleImage = document.querySelector("[animate='scale']");
+
+  // Get elements
   let scaleTrigger = document.querySelector("[animate='scale-trigger']");
+  let scaleImage = scaleTrigger?.querySelector("[animate='scale']");
   let content = scaleTrigger?.querySelector("[animate='content']");
   let containerWidth = gsap.getProperty(".container-xlarge", "width") || 0.85;
   // @ts-ignore
   let scaleFactor = containerWidth / window.innerWidth;
 
+  if (!scaleTrigger || !scaleImage) return;
   let duration = 3;
 
   // Scale section down at the start

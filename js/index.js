@@ -16,8 +16,8 @@ function init() {
   onAllPages();
   moveImgInText();
   headerVideoProgress();
-  animateCardToFull();
   animateImageScale();
+  animateCardToFull();
   // animateFooter();
 
   let isMobile = getScreenSize();
