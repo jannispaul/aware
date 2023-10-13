@@ -32,7 +32,7 @@ export function animateNav() {
 
   scrollAnimation
     .to("[animate='nav']", {
-      //   yPercent: -100,
+      yPercent: -100,
       duration: 0.4,
       background: "white",
       color: "#000",
