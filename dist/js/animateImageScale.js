@@ -1,1 +1,1 @@
-import{g as r,S as t}from"./onAllPages.js";function o(){r.registerPlugin(t);let e=document.querySelector("[animate='image-scale']");r.from(e,{scale:"1.4",scrollTrigger:{start:"top bottom",end:"bottom middle",trigger:e,scrub:1}})}export{o as a};
+import{g as a,S as t}from"./onAllPages.js";function r(){a.registerPlugin(t),a.from("[animate = 'image-scale']",{scale:"1.4",scrollTrigger:{start:"top bottom",end:"bottom bottom",trigger:"[animate='image-scale']",scrub:1}})}export{r as a};
