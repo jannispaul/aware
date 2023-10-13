@@ -4,7 +4,6 @@ import { moveImgInText } from "./utils/moveImgInText.js";
 import { onAllPages } from "./utils/onAllPages.js";
 import { createSlider } from "./utils/createSlider.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
-import { animateFooter } from "./animations/animateFooter.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
 import { animateBorn } from "./animations/animateBorn.js";
 
@@ -22,8 +21,7 @@ function init() {
   createSlider(sliderOptions);
   animateScaleUp();
   animateImageScale();
-  animateBorn()
-  animateFooter();
+  animateBorn();
 }
 
 if (document.readyState == "loading") {

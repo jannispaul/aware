@@ -9,7 +9,7 @@ export function animateBusinessHeader() {
   //   const randomAngle = random(-10, 10);
 
   const images = gsap.utils.toArray('[animate="floating-img"]');
-  console.log(images);
+  // console.log(images);
   images.forEach((image) => {
     gsap.set(image, {
       x: randomX(-1),

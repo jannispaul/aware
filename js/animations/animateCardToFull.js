@@ -9,9 +9,13 @@ export function animateCardToFull() {
   let scaleTrigger = document.querySelector("[animate='scale-trigger']");
   let scaleImage = scaleTrigger?.querySelector("[animate='scale']");
   let content = scaleTrigger?.querySelector("[animate='content']");
-  let containerWidth = gsap.getProperty(".container-xlarge", "width") || 0.85;
+  //@ts-ignore
+  let containerWidth = document.querySelector(".container-xlarge")?.offsetWidth;
+
+  // let containerWidth = gsap.getProperty(containerXLarge, "width");
   // @ts-ignore
-  let scaleFactor = containerWidth / window.innerWidth;
+  let scaleFactor = containerWidth ? containerWidth / window.innerWidth : 0.85;
+  console.log(scaleTrigger, scaleImage, containerWidth);
 
   if (!scaleTrigger || !scaleImage) return;
   let duration = 3;

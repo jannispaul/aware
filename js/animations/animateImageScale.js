@@ -2,7 +2,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Footer images scale animation
+// Footer images scale up animation
 export function animateImageScale() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -14,9 +14,9 @@ export function animateImageScale() {
       trigger: "[animate='image-scale']",
       // markers: true,
       scrub: 1,
-      onUpdate: (trigger) => {
-        console.log(trigger.progress);
-      },
+      // onUpdate: (trigger) => {
+      //   // console.log(trigger.progress);
+      // },
     },
   });
 }

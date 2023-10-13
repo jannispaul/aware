@@ -1,6 +1,5 @@
 // @ts-check
 import { animateBanner } from "./animations/animateBanner.js";
-import { animateFooter } from "./animations/animateFooter.js";
 import { onAllPages } from "./utils/onAllPages.js";
 import { animateCardToFull } from "./animations/animateCardToFull.js";
 import { createSlider } from "./utils/createSlider.js";
@@ -11,7 +10,6 @@ function init() {
   animateBanner();
   animateCardToFull();
   animateImageScale();
-  animateFooter();
   let sliderOptions = {
     container: ".team_cms-list",
     items: 3,
