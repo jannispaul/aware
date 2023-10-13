@@ -32,6 +32,12 @@ export function animateHorizontalScroll(params) {
           scrollRightToMax(wrapper);
         }
       },
+      // Prevents the scroll trigger from firing mulitple times
+      onLeave: function (self) {
+        self.scroll(self.start); // <-- sets position to start of ScrollTrigger
+        self.disable();
+        self.animation.progress(1);
+      },
     },
   });
 }
