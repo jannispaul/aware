@@ -32,7 +32,6 @@ export function animateNav() {
 
   scrollAnimation
     .to("[animate='nav']", {
-      yPercent: -100,
       duration: 0.4,
       background: "white",
       color: "#000",
@@ -79,9 +78,10 @@ export function animateNav() {
     },
   });
 
-  //   const borderRadiusAnimation = gsap.timeline({
-  //     paused: true,
-  //   });
+  // End of animation 2
+
+  // Animation 3
+  // On open remove border radius / on close add radius
 
   const borderRadiusAnimation = gsap.to(".navbar_component", {
     borderRadius: 0,
@@ -89,14 +89,12 @@ export function animateNav() {
     // paused: true,
   });
 
-  //   const openAnimation = scrollAnimation;
-  //   .add(borderRadiusAnimation, "<");
-
   //   Mutation observer variables
   let menuIsOpen = false;
   const targetNode = document.querySelector(".w-nav-button");
   const config = { attributes: true, childList: false, subtree: false };
 
+  // Mutation observer whaching the menu opening
   const callback = function (mutationsList, observer) {
     for (let i = 0; i < mutationsList.length; i++) {
       if (mutationsList[i].type === "attributes") {
@@ -118,44 +116,4 @@ export function animateNav() {
   if (!targetNode) return;
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
-
-  //   ScrollTrigger.create({
-  //     trigger: "body",
-  //     start: "top top",
-  //     end: "max",
-  //     onUpdate: (self) => {
-  //       self.direction === 1 ? scrollAnimation.play() : scrollAnimation.reverse();
-  //     },
-  //   });
-
-  //   ScrollTrigger.create({
-  //     trigger: ".second",
-  //     endTrigger: "body",
-  //     start: "top top",
-  //     markers: true,
-  //     end: "bottom bottom",
-  //     onEnter: () => {
-  //       console.log("enter");
-  //       gsap.set("nav", {
-  //         position: "fixed",
-  //       });
-  //     },
-  //     onLeaveBack: () => {
-  //       console.log("leaveBack");
-  //       gsap.set("nav", {
-  //         position: "absolute",
-  //       });
-  //     },
-  //   });
-
-  //   gsap.to("nav", {
-  //     backgroundColor: "purple",
-  //     scrollTrigger: {
-  //       trigger: ".first",
-  //       start: "20% top",
-  //       end: "+=100px",
-  //       // markers: true,
-  //       scrub: true,
-  //     },
-  //   });
 }
