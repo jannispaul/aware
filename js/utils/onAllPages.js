@@ -6,7 +6,7 @@ import { animateLoader } from "../animations/animateLoader.js";
 import { animateNavButton } from "../animations/animateNavButton.js";
 import { animateFadeIn } from "../animations/animateFadeIn.js";
 
-export function onAllPages(params) {
+export function onAllPages() {
   let isMobile = getScreenSize();
   animateLoader(isMobile);
   animateNav();
@@ -17,3 +17,4 @@ export function onAllPages(params) {
   animateNavButton();
   animateMenu(isMobile);
 }
+export default onAllPages;
