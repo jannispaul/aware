@@ -14,6 +14,7 @@ export default defineConfig({
   plugins: [process.env.NODE_ENV === "development" ? [basicSsl()] : []],
   build: {
     rollupOptions: {
+      // preserveEntrySignatures: "exports-only",
       input: {
         index: "js/index.js",
         locations: "js/locations.js",
@@ -21,6 +22,7 @@ export default defineConfig({
         aboutUs: "js/aboutUs.js",
         awareForBusiness: "js/awareForBusiness.js",
         howItWorks: "js/howItWorks.js",
+        // onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
       },
       output: {
         entryFileNames: `js/[name].js`,

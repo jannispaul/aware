@@ -1,39 +1,32 @@
 import { gsap } from "gsap";
 export function animateLoader(isMobile) {
-  // Makes sure the loader is only played once
+  // // Makes sure the loader is only played once
   function handleLoader() {
     // Get saved data from sessionStorage
     let loaderSeen = sessionStorage.getItem("loaderSeen");
-    let loadingWrapper = document.querySelector("[animate='loader']");
-    // console.log(loadingWrapper);
-    // loaderSeen = false;
+    // let loadingWrapper = document.querySelector("[animate='loader']");
 
-    //
+    // If the loader has not been seen show it, otherwise hide it
     if (!loaderSeen) {
       // display the loading-wrapper
-      loadingWrapper.style.display = "flex";
+      // loadingWrapper.style.display = "flex";
       animateLoadingImages();
-      sessionStorage.setItem("loaderSeen", "true");
-    } else {
-      // hide the loading-wrapper
-      loadingWrapper.style.visibility = "hidden";
-      loadingWrapper.style.display = "none";
+      // sessionStorage.setItem("loaderSeen", "true");
     }
+    //  else {
+    //   // hide the loading-wrapper
+    //   loadingWrapper.style.visibility = "hidden";
+    //   loadingWrapper.style.display = "none";
+    // }
   }
+
   handleLoader();
   function animateLoadingImages() {
     // Get all images
     const images = Array.from(document.querySelectorAll("[animate='loader'] img"));
     const wrapper = document.querySelector("[animate='load-image-wrapper']");
     const logoMask = document.querySelector("[animate='logo-mask']");
-    // console.log(images);
-    // Last images is shown on top, therefore reverse array first
-    // images.reverse().forEach((image, index) => {
-    //   console.log(image);
-    //   setTimeout(() => {
-    //     image.style.display = "none";
-    //   }, (index + 1) * 200);
-    // });
+
     let delay = 0.1;
 
     gsap
