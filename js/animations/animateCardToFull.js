@@ -15,7 +15,7 @@ export function animateCardToFull() {
   // let containerWidth = gsap.getProperty(containerXLarge, "width");
   // @ts-ignore
   let scaleFactor = containerWidth ? containerWidth / window.innerWidth : 0.85;
-  console.log(scaleTrigger, scaleImage, containerWidth);
+  // console.log(scaleTrigger, scaleImage, containerWidth);
 
   if (!scaleTrigger || !scaleImage) return;
   let duration = 3;
