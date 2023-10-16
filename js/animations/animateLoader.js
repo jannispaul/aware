@@ -27,6 +27,8 @@ export function animateLoader(isMobile) {
     const wrapper = document.querySelector("[animate='load-image-wrapper']");
     const logoMask = document.querySelector("[animate='logo-mask']");
 
+    if (!images || !wrapper || !logoMask) return;
+
     let delay = 0.1;
 
     gsap

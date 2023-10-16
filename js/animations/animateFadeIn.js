@@ -8,7 +8,7 @@ export function animateFadeIn() {
   let allFadeInItems = document.querySelectorAll("[fade-in]");
   let individualItems = Array.from(allFadeInItems).filter((items) => !items.closest("[animate='section']"));
   // Animation duration
-  let duration = 0.9;
+  let duration = 0.6;
 
   if (!animatedSections) return;
 
