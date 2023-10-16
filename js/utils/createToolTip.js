@@ -1,7 +1,7 @@
 // Function to create tooltips for biomarkers
 export function createToolTip(params) {
   // Remove Modal attributes
-  const infoButtons = document.querySelectorAll('[fs-modal-element="open"]');
+  const infoButtons = document.querySelectorAll('[fs-modal-element="open-2"]');
   infoButtons.forEach((button) => {
     button.removeAttribute("fs-modal-element");
     button.setAttribute("fs-modal-element", "tooltip");
