@@ -4,20 +4,19 @@ export function animateLoader(isMobile) {
   function handleLoader() {
     // Get saved data from sessionStorage
     let loaderSeen = sessionStorage.getItem("loaderSeen");
-    // let loadingWrapper = document.querySelector("[animate='loader']");
-
+    let loadingWrapper = document.querySelector("[animate='loader']");
+    if (!loadingWrapper) return;
     // If the loader has not been seen show it, otherwise hide it
     if (!loaderSeen) {
       // display the loading-wrapper
       // loadingWrapper.style.display = "flex";
       animateLoadingImages();
-      // sessionStorage.setItem("loaderSeen", "true");
+      sessionStorage.setItem("loaderSeen", "true");
+    } else {
+      // hide the loading-wrapper
+      loadingWrapper.style.visibility = "hidden";
+      loadingWrapper.style.display = "none";
     }
-    //  else {
-    //   // hide the loading-wrapper
-    //   loadingWrapper.style.visibility = "hidden";
-    //   loadingWrapper.style.display = "none";
-    // }
   }
 
   handleLoader();
