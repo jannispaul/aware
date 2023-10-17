@@ -16,16 +16,15 @@ export function animateQuotesMobile(params) {
   let slider = createSlider(sliderOptions);
   // In order hide copy on side items and scale down image, centered class is added to center item
   // Styles for center class in embed of component
-  function updateCenterItemClass(params) {
+  function updateCenterItemClass() {
     let activeItems = document.querySelectorAll(".tns-slide-active");
 
     activeItems[0]?.classList.remove("center");
     activeItems[1]?.classList.add("center");
     activeItems[2]?.classList.remove("center");
   }
+  // Add center class on load once
   updateCenterItemClass();
-  //@ts-ignore
-  slider.events.on("indexChanged", () => {
-    updateCenterItemClass();
-  });
+  // Update classes when index changes
+  slider?.events.on("indexChanged", updateCenterItemClass);
 }
