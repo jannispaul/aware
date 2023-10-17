@@ -1,6 +1,6 @@
 export function updateModalCopy(params) {
   // Select all open modal buttons and marker info elements
-  const openModalButtons = document.querySelectorAll('[fs-modal-element="open"]');
+  const openModalButtons = document.querySelectorAll('[fs-modal-element="open-2"]');
   const markerInfos = document.querySelectorAll('[data-element="marker-info"]');
   const modalBody = document.querySelector('[data-element="modal-body"]');
 

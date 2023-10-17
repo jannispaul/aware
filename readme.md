@@ -2,7 +2,6 @@
 
 Script links to purge: https://www.jsdelivr.com/tools/purge
 
-https://cdn.jsdelivr.net/gh/jannispaul/aware/dist/js/index.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware/dist/js/baseAnimations.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware/dist/js/home.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware/dist/js/awareForBusiness.js
