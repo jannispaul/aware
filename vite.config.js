@@ -16,13 +16,13 @@ export default defineConfig({
     rollupOptions: {
       // preserveEntrySignatures: "exports-only",
       input: {
-        index: "js/index.js",
+        home: "js/home.js",
         locations: "js/locations.js",
         whatsIncluded: "js/whatsIncluded.js",
         aboutUs: "js/aboutUs.js",
         awareForBusiness: "js/awareForBusiness.js",
         howItWorks: "js/howItWorks.js",
-        nav: "js/nav.js",
+        // nav: "js/nav.js",
         // onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
       },
       output: {
