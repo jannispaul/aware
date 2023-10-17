@@ -1,5 +1,5 @@
 //@ts-check
-import onAllPages from "./utils/onAllPages";
+import { onAllPages } from "./utils/onAllPages";
 
 function init() {
   onAllPages();

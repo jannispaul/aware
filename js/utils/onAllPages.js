@@ -17,4 +17,3 @@ export function onAllPages() {
   animateNavButton();
   animateMenu(isMobile);
 }
-export default onAllPages;

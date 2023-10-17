@@ -5,13 +5,18 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 export default defineConfig({
   server: {
     host: "localhost",
+    port: 5173,
     cors: "*",
     hmr: {
       host: "localhost",
       protocol: "ws",
     },
   },
+  preview: {
+    port: 5173,
+  },
   plugins: [process.env.NODE_ENV === "development" ? [basicSsl()] : []],
+  // plugins: [basicSsl()], // Only use for preview
   build: {
     rollupOptions: {
       // preserveEntrySignatures: "exports-only",

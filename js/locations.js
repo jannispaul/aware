@@ -8,11 +8,11 @@ import { getScreenSize } from "./utils/getScreenSize.js";
 
 function init() {
   onAllPages();
-  let isMobile = getScreenSize();
   animateBanner();
   animateCardToFull();
   animateImageScale();
 
+  let isMobile = getScreenSize();
   // Only on desktop
   if (!isMobile) {
     let sliderOptions = {
