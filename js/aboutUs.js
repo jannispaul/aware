@@ -1,7 +1,7 @@
 // @ts-check
 
 import { moveImgInText } from "./utils/moveImgInText.js";
-// import { onAllPages } from "./utils/onAllPages.js";
+import { onAllPages } from "./utils/onAllPages.js";
 import { createSlider } from "./utils/createSlider.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
@@ -10,7 +10,7 @@ import { getScreenSize } from "./utils/getScreenSize.js";
 
 function init() {
   let isMobile = getScreenSize();
-  // onAllPages();
+  onAllPages();
   moveImgInText();
   animateScaleUp();
   animateImageScale();
