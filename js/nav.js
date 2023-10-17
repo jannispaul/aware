@@ -1,11 +1,8 @@
-// @ts-check
-
-import { animateImageScale } from "./animations/animateImageScale.js";
-// import { onAllPages } from "./utils/onAllPages.js";
+//@ts-check
+import onAllPages from "./utils/onAllPages";
 
 function init() {
-  animateImageScale();
-  // onAllPages();
+  onAllPages();
 }
 
 if (document.readyState == "loading") {

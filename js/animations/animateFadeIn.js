@@ -7,10 +7,13 @@ export function animateFadeIn() {
   let animatedSections = document.querySelectorAll("[animate='section']");
   let allFadeInItems = document.querySelectorAll("[fade-in]");
   let individualItems = Array.from(allFadeInItems).filter((items) => !items.closest("[animate='section']"));
+
   // Animation duration
   let duration = 0.6;
+  let staggerBasis = 0.4;
 
-  if (!animatedSections) return;
+  // When there is nothing to fade in, return
+  if (!animatedSections && !allFadeInItems) return;
 
   gsap.set(allFadeInItems, { transformOrigin: "left" });
 
@@ -19,7 +22,7 @@ export function animateFadeIn() {
     //  Get all elements in section
     let elements = section.querySelectorAll("[fade-in]");
     // If there are many, the stagge time will decrease
-    let staggerTime = 0.5 / (elements.length / 2);
+    let staggerTime = staggerBasis / (elements.length / 2);
     // Set transform origin to left for rotation
 
     // ANimation 1

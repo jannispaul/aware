@@ -1,12 +1,12 @@
 // @ts-check
 import { animateBanner } from "./animations/animateBanner.js";
-import { onAllPages } from "./utils/onAllPages.js";
+// import { onAllPages } from "./utils/onAllPages.js";
 import { animateCardToFull } from "./animations/animateCardToFull.js";
 import { createSlider } from "./utils/createSlider.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
 
 function init() {
-  onAllPages();
+  // onAllPages();
   animateBanner();
   animateCardToFull();
   animateImageScale();

@@ -1,6 +1,6 @@
 // @ts-check
 import { moveImgInText } from "./utils/moveImgInText.js";
-import { onAllPages } from "./utils/onAllPages.js";
+// import { onAllPages } from "./utils/onAllPages.js";
 import { animateHalfs } from "./animations/animateHalfs.js";
 // import { animateFooter } from "./animations/animateFooter.js";
 import { animateCardToFull } from "./animations/animateCardToFull.js";
@@ -14,7 +14,7 @@ import { animateHorizontalScroll } from "./animations/animateHorizontalScroll.js
 import { animateQuotesMobile } from "./animations/animateQuotesMobile.js";
 
 function init() {
-  onAllPages();
+  // onAllPages();
   moveImgInText();
   animateImageScale();
   animateCardToFull();

@@ -1,14 +1,14 @@
 // @ts-check
 
 import { moveImgInText } from "./utils/moveImgInText.js";
-import { onAllPages } from "./utils/onAllPages.js";
+// import { onAllPages } from "./utils/onAllPages.js";
 import { createSlider } from "./utils/createSlider.js";
 import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateScaleUp } from "./animations/animateScaleUp.js";
 import { animateBorn } from "./animations/animateBorn.js";
 
 function init() {
-  onAllPages();
+  // onAllPages();
   moveImgInText();
   let sliderOptions = {
     container: ".team_cms-list",
