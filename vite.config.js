@@ -22,7 +22,7 @@ export default defineConfig({
         aboutUs: "js/aboutUs.js",
         awareForBusiness: "js/awareForBusiness.js",
         howItWorks: "js/howItWorks.js",
-        // nav: "js/nav.js",
+        baseAnimations: "js/baseAnimations.js",
         // onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
       },
       output: {

@@ -355,7 +355,7 @@ export function animateHow() {
 
     // Set first step
     gsap.set(steps[0], { flex: "1 0 10%" });
-    console.log(steps[0]);
+    // console.log(steps[0]);
     // Set height of section
     setSectionHeight();
   }
