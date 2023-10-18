@@ -14,6 +14,6 @@ export function tabsListCount() {
 
     // Update the list count
     if (!items) return;
-    el.querySelector("[data-element='list-count']").innerText = items.length;
+    el.querySelector("[data-element='list-count']").innerText = items.length > 1 ? items.length + " biomarkers" : items.length + " biomarker";
   });
 }

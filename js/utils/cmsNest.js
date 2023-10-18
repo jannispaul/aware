@@ -53,7 +53,7 @@ export function cmsNest() {
       if (!counter) return;
       let numberOfItems = list.children.length;
       if (numberOfItems > 0) {
-        counter.innerText = list.children.length;
+        counter.innerText = list.children.length > 1 ? list.children.length + " biomarkers" : list.children.length + " biomarker";
       } else {
         counter.remove();
       }
