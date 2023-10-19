@@ -1,11 +1,15 @@
+//@ts-check
 import { gsap } from "gsap";
 export function animateLoader(isMobile) {
   // // Makes sure the loader is only played once
   function handleLoader() {
     // Get saved data from sessionStorage
     let loaderSeen = sessionStorage.getItem("loaderSeen");
+    /** @type {HTMLElement} */
+    // @ts-ignore
     let loadingWrapper = document.querySelector("[animate='loader']");
     if (!loadingWrapper) return;
+
     // If the loader has not been seen show it, otherwise hide it
     if (!loaderSeen) {
       // display the loading-wrapper
@@ -14,8 +18,8 @@ export function animateLoader(isMobile) {
       sessionStorage.setItem("loaderSeen", "true");
     } else {
       // hide the loading-wrapper
-      loadingWrapper?.style.visibility = "hidden";
-      loadingWrapper?.style.display = "none";
+      loadingWrapper.style.visibility = "hidden";
+      loadingWrapper.style.display = "none";
     }
   }
 

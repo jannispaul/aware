@@ -1,4 +1,4 @@
-// @ts-ignore
+//@ts-ignore
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // https://greensock.com/docs/v3/Eases
@@ -10,12 +10,23 @@ export function animateHow() {
   // Get elements
   const section = document.querySelector("[animate='how-section']");
   const container = document.querySelector("[animate='container']");
-  const stepsWrapper = section.querySelector("[animate='step-wrapper']");
+  const stepsWrapper = section?.querySelector("[animate='step-wrapper']");
   const steps = Array.from(stepsWrapper?.children);
   const imageWrapper = section.querySelector("[animate='image-wrapper']");
   const images = Array.from(imageWrapper?.children);
   const numberColorActive = getComputedStyle(document.documentElement).getPropertyValue("--neutrals--900");
   const numberColorInactive = getComputedStyle(document.documentElement).getPropertyValue("--neutrals--300");
+
+  // To make scroll section clickable get link attribus
+  const links = section?.querySelectorAll("[data-link]");
+  links?.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Scroll to link
+      section?.querySelector(link.dataset.link).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
 
   // Get height of Nav
   // const navHeight = gsap.getProperty("[animate='nav']", "height");
