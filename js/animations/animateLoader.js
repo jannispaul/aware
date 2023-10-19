@@ -18,7 +18,6 @@ export function animateLoader(isMobile) {
       sessionStorage.setItem("loaderSeen", "true");
     } else {
       // hide the loading-wrapper
-      loadingWrapper.style.visibility = "hidden";
       loadingWrapper.style.display = "none";
     }
   }
