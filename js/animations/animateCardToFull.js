@@ -80,6 +80,6 @@ export function animateCardToFull() {
       },
       "<"
     );
-    animation.add(fadeIn, duration * 1.7);
+    animation.add(fadeIn, duration * 1.2);
   }
 }
