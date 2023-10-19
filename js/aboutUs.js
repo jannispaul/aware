@@ -11,13 +11,13 @@ import { getScreenSize } from "./utils/getScreenSize.js";
 function init() {
   let isMobile = getScreenSize();
   onAllPages();
-  moveImgInText();
   animateScaleUp();
   animateImageScale();
   animateBorn();
 
   // Only on Dekstop
   if (!isMobile) {
+    moveImgInText();
     let sliderOptions = {
       container: ".team_cms-list",
       items: 3,
