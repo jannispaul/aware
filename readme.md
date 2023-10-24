@@ -1,5 +1,18 @@
 # Cusotm code for aware.app
 
+## Quick start
+
+Important commands
+`pnpm install`
+`pnpm run dev`
+`pnpm run build`
+
+## Versioning / Releases
+
+Go to Github -> Releases -> Create new release
+
+## Purge custom code CDN
+
 Script links to purge: https://www.jsdelivr.com/tools/purge
 
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/baseAnimations.js
