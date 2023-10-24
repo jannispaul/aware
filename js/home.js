@@ -7,7 +7,6 @@ import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateQuotes } from "./animations/animateQuotes.js";
 import { animateHow } from "./animations/animateHow.js";
 import { getScreenSize } from "./utils/getScreenSize.js";
-import { animateHorizontalScroll } from "./animations/animateHorizontalScroll.js";
 import { animateQuotesMobile } from "./animations/animateQuotesMobile.js";
 
 function init() {
@@ -20,7 +19,6 @@ function init() {
   let isMobile = getScreenSize();
   // Only run on mobile
   if (isMobile) {
-    animateHorizontalScroll();
     animateQuotesMobile();
   }
   // Only run on desktop
