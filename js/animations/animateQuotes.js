@@ -179,6 +179,9 @@ export function animateQuotes(params) {
   }
 
   function updateQuoteCopy(clickIndex) {
+    // Make sure a number is provided
+    if (isNaN(clickIndex)) return;
+
     // Fade copy out to the right
     gsap.to(quoteContainer, {
       opacity: 0,
@@ -221,10 +224,13 @@ export function animateQuotes(params) {
 
   function init() {
     shiftItems(quoteListItems.length - 1, 0);
+    // Show quote copy for first testimonial
+    updateQuoteCopy(0);
   }
   init();
 
   function handleMouseEnter(hoveredItem) {
+    if (!hoveredItem) return;
     if (hoveredItem.ariaCurrent === "true") return;
     // prevent active item from scaling
     gsap.timeline().to(hoveredItem, {
