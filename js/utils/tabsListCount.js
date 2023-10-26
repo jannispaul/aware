@@ -1,7 +1,7 @@
 // Function to specifically count list items of aware addons when finsweet attributes already moved items to webflow tabs before count has happened
 export function tabsListCount() {
   // Each tab has a count text block
-  const counterBlocks = Array.from(document.querySelectorAll("[data-element='tab-count']"));
+  const counterBlocks = Array.from(document.querySelectorAll("[data-tabs='tab-count']"));
   if (!counterBlocks) return;
   // Loop through the blocks
   counterBlocks.forEach((el) => {
@@ -13,7 +13,8 @@ export function tabsListCount() {
     let items = document.querySelector(`[data-category="${category}"][data-identifier="addons"][data-element="nest-target"]`).childNodes;
 
     // Update the list count
-    if (!items) return;
-    el.querySelector("[data-element='list-count']").innerText = items.length > 1 ? items.length + " biomarkers" : items.length + " biomarker";
+    let countElement = el.querySelector("[data-element='list-count']");
+    if (!countElement) return;
+    countElement.innerText = items.length > 1 ? items.length.toString() + " biomarkers" : items.length.toString() + " biomarker";
   });
 }
