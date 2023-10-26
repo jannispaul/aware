@@ -42,7 +42,7 @@ export function animateQuotesMobile(params) {
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log(entry);
+        // console.log(entry);
         const intersectionRatio = entry.intersectionRatio;
         // Check if the element is fully visible horizontally
         if (intersectionRatio >= 0.9) {

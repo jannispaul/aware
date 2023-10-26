@@ -2,7 +2,6 @@
 import { getMobileOS } from "./getMobileOS";
 
 export function setMobileDownloadLinks() {
-  console.log("running");
   let os = getMobileOS();
   if (os === "iOs") return;
 
