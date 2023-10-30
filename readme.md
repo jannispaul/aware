@@ -22,3 +22,4 @@ https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/howItWorks.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/locations.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/whatsIncluded.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/aboutUs.js
+https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/onAllPages.js
