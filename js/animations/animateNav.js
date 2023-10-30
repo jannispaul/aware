@@ -94,18 +94,38 @@ export function animateNav() {
   const targetNode = document.querySelector(".w-nav-button");
   const config = { attributes: true, childList: false, subtree: false };
 
+  // Turn nav button dark if menu is open
+  function toggleNavButton() {
+    console.log("toggle button", menuIsOpen, navButton);
+    if (menuIsOpen) {
+      navButton?.classList.remove("is-outline-light");
+      navButton?.classList.add("is-outline");
+    } else {
+      // Change button to ligth button
+      navButton?.classList.remove("is-outline");
+      navButton?.classList.add("is-outline-light");
+    }
+  }
+
   // Mutation observer whaching the menu opening
   const callback = function (mutationsList, observer) {
     for (let i = 0; i < mutationsList.length; i++) {
       if (mutationsList[i].type === "attributes") {
         // console.log(targetNode);
         menuIsOpen = mutationsList[i].target.classList.contains("w--open");
+        // If the menu is open
         if (menuIsOpen) {
           scrollAnimation.play();
           borderRadiusAnimation.play();
+          toggleNavButton();
+
+          // If the menu is open and scrolledToTop
         } else if (!menuIsOpen && isScrolledToTop) {
+          toggleNavButton();
           scrollAnimation.reverse();
           gsap.delayedCall(0.3, () => borderRadiusAnimation.reverse());
+
+          // Otherwise
         } else {
           gsap.delayedCall(0.3, () => borderRadiusAnimation.reverse());
         }
