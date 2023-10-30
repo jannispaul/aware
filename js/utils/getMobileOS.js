@@ -1,10 +1,13 @@
 export function getMobileOS() {
   const ua = navigator.userAgent;
   if (/android/i.test(ua)) {
+    // console.log("andorid");
     return "Android";
-  } else if (/iPad|iPhone|iPod/.test(ua)) {
+  } else if (/iPad|iPhone|iPod|Safari/i.test(ua)) {
+    // console.log("ios");
     return "iOS";
   }
+  // console.log("other");
   return "Other";
 }
 

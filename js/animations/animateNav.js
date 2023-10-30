@@ -96,7 +96,7 @@ export function animateNav() {
 
   // Turn nav button dark if menu is open
   function toggleNavButton() {
-    console.log("toggle button", menuIsOpen, navButton);
+    // console.log("toggle button", menuIsOpen, navButton);
     if (menuIsOpen) {
       navButton?.classList.remove("is-outline-light");
       navButton?.classList.add("is-outline");
