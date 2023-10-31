@@ -3,7 +3,7 @@ import { getMobileOS } from "./getMobileOS";
 
 export function setMobileDownloadLinks() {
   let os = getMobileOS();
-  if (os.toLowerCase === "iOS".toLowerCase) return;
+  if (os === "ios") return;
 
   // Get all links and set android playstore link
   let links = document.querySelectorAll("[data-android]");
