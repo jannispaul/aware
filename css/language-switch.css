@@ -2,13 +2,13 @@
   display: none;
   font-weight: 500;
   font-size: 1.125rem;
+  color: var(--background--50);
 }
 
 .country-selector a,
 .country-selector a:hover {
   color: var(--background--50);
 }
-
 .wg-drop.country-selector {
   background: transparent;
   border-radius: 0.875rem;
@@ -18,9 +18,12 @@
 }
 .wg-drop.country-selector ul {
   border-radius: 0.875rem;
-  background: #fff;
+  background: transparent;
   border: none;
+  min-width: auto;
+  position: static;
 }
+
 .wg-drop.country-selector .wgcurrent {
   border: none;
   position: relaitve;
@@ -37,19 +40,11 @@
 .country-selector .wg-li {
   font-size: 1rem;
 }
-.country-selector a:hover {
-  color: inherit;
-}
 
 .wg-drop.country-selector :not(.wgcurrent) a {
   padding: 0.5rem 1rem;
 }
 
-aside.country-selector.weglot_switcher.default.wg-drop ul {
-  top: 0;
-  right: 100%;
-  background: transparent;
-}
 aside.country-selector.weglot_switcher.default.wg-drop .wgcurrent a {
   padding: 0.5rem;
 }
@@ -70,6 +65,11 @@ aside.country-selector.weglot_switcher.default.wg-drop .wg-li.wgcurrent {
 
 aside.country-selector.weglot_switcher.default a {
   font-size: 1.125rem;
+}
+
+body[data-wg-interactive] aside.country-selector {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 @media (max-width: 767px) {

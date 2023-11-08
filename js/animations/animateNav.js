@@ -94,16 +94,40 @@ export function animateNav() {
   const targetNode = document.querySelector(".w-nav-button");
   const config = { attributes: true, childList: false, subtree: false };
 
+  /**
+   * @type HTMLElement | null
+   */
+  let weglotElement = document.querySelector(".country-selector");
+
+  // Get color prop for weglot text color
+  function getColorProp() {
+    // Get the root element
+    if (!weglotElement) return;
+    // Get the styles (properties and values) for the root
+    let weglotStyle = getComputedStyle(weglotElement);
+    // Get style prop
+    return weglotStyle.getPropertyValue("--background50");
+  }
+  let originalWeglotColor = getColorProp();
+
+  // Set color prop for weglot
+  function setColorProp(color) {
+    if (!weglotElement) return;
+    weglotElement.style.setProperty("--background50", color);
+  }
+
   // Turn nav button dark if menu is open
   function toggleNavButton() {
     // console.log("toggle button", menuIsOpen, navButton);
     if (menuIsOpen) {
       navButton?.classList.remove("is-outline-light");
       navButton?.classList.add("is-outline");
+      setColorProp("#000");
     } else {
-      // Change button to ligth button
+      // Change button to light button
       navButton?.classList.remove("is-outline");
       navButton?.classList.add("is-outline-light");
+      setColorProp(originalWeglotColor);
     }
   }
 
