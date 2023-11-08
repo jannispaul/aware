@@ -38,6 +38,7 @@ export function animateQuotesMobile(params) {
     rootMargin: "100% 0% 100% 0%", // Only fire on horizontal since the vertical margins are set 100% outside the viewport
     threshold: [0, 0.9], // Trigger when the entire element enters (0) or exits (1) the viewport vertically
   };
+  let timeouts = {};
 
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
@@ -48,12 +49,18 @@ export function animateQuotesMobile(params) {
         if (intersectionRatio >= 0.9) {
           // Add class when element enters from either left or right
           entry.target.classList.add("center");
+          // Clear the timeout
+          clearTimeout(timeouts[entry.target.id]);
         } else {
-          // Remove class when element exits to the side
-          entry.target.classList.remove("center");
+          // To prevent safari bug of quick addition and deletion of class
+          // Set 150ms timeout for entry
+          timeouts[entry.target.id] = setTimeout(() => {
+            // Remove class when element exits to the side
+            entry.target.classList.remove("center");
+          }, 150);
         }
       } else {
-        // Remove class when element exits to the side
+        // Remove class when element exits
         entry.target.classList.remove("center");
       }
     });
