@@ -224,8 +224,8 @@ export function animateQuotes(params) {
 
   function init() {
     shiftItems(quoteListItems.length - 1, 0);
-    // Show quote copy for first testimonial
-    updateQuoteCopy(0);
+    // Show quote copy for the last testimonial
+    updateQuoteCopy(quoteListItems.length - 1);
   }
   init();
 
