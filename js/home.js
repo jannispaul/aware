@@ -10,13 +10,12 @@ import { getScreenSize } from "./utils/getScreenSize.js";
 import { animateQuotesMobile } from "./animations/animateQuotesMobile.js";
 
 function init() {
+  let isMobile = getScreenSize();
   onAllPages();
   moveImgInText();
   animateImageScale();
   animateCardToFull();
-  // animateFooter();
 
-  let isMobile = getScreenSize();
   // Only run on mobile
   if (isMobile) {
     animateQuotesMobile();

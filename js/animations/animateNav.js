@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function animateNav() {
   gsap.registerPlugin(ScrollTrigger);
+  // Nav button
   const navButton = document.querySelector(".is-nav.is-outline-light");
-
   // Weglot lang switch prop style
   /**
    * @type HTMLElement | null
@@ -25,7 +25,7 @@ export function animateNav() {
 
   // Set color prop for weglot
   function setColorProp(color) {
-    if (!weglotElement) return;
+    if (!weglotElement || !color) return;
     weglotElement.style.setProperty("--lang-switch-color", color);
   }
 
@@ -122,7 +122,8 @@ export function animateNav() {
   // End of animation 2
 
   // Animation 3
-  // On open remove border radius / on close add radius
+  // On open: remove border radius
+  // On close: add radius
 
   const borderRadiusAnimation = gsap.to(".navbar_component", {
     borderRadius: 0,
