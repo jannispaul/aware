@@ -28,6 +28,7 @@ export default defineConfig({
         awareForBusiness: "js/awareForBusiness.js",
         howItWorks: "js/howItWorks.js",
         baseAnimations: "js/baseAnimations.js",
+        gift: "js/gift.js",
         // onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
       },
       output: {
