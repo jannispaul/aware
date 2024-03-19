@@ -25,6 +25,8 @@ export function animateFadeIn() {
     let staggerTime = staggerBasis / (elements.length / 2);
     // Set transform origin to left for rotation
 
+    gsap.set(elements, { autoAlpha: 1 });
+
     // ANimation 1
     // Main animation
     gsap
@@ -36,6 +38,7 @@ export function animateFadeIn() {
       })
       .from(elements, {
         opacity: 0,
+        autoAlpha: 0,
         duration: duration,
         ease: "power1.in",
         stagger: staggerTime,
@@ -67,6 +70,7 @@ export function animateFadeIn() {
         opacity: 0,
         duration: duration,
         ease: "power1.in",
+        autoAlpha: 0,
       })
       .from(
         item,
