@@ -29,6 +29,7 @@ export default defineConfig({
         howItWorks: "js/howItWorks.js",
         baseAnimations: "js/baseAnimations.js",
         gift: "js/gift.js",
+        referral: "js/referral",
         // onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
       },
       output: {

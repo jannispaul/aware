@@ -1,20 +1,19 @@
 // @ts-check
-import { moveImgInText } from "./utils/moveImgInText.js";
 import { onAllPages } from "./utils/onAllPages.js";
-import { animateHalfs } from "./animations/animateHalfs.js";
-import { animateCardToFull } from "./animations/animateCardToFull.js";
-import { animateImageScale } from "./animations/animateImageScale.js";
 import { animateQuotes } from "./animations/animateQuotes.js";
-import { animateHow } from "./animations/animateHow.js";
+import { animateXmasHow } from "./animations/animateXmasHow.js";
 import { getScreenSize } from "./utils/getScreenSize.js";
 import { animateQuotesMobile } from "./animations/animateQuotesMobile.js";
+import { animateHow } from "./animations/animateHow.js";
+import { cmsNest } from "./utils/cmsNest.js";
+import { createToolTip } from "./utils/createToolTip.js";
+import { tabsListCount } from "./utils/tabsListCount.js";
 
 function init() {
   let isMobile = getScreenSize();
   onAllPages();
-  moveImgInText();
-  animateImageScale();
-  animateCardToFull();
+  cmsNest();
+  tabsListCount();
 
   // Only run on mobile
   if (isMobile) {
@@ -22,8 +21,10 @@ function init() {
   }
   // Only run on desktop
   if (!isMobile) {
-    animateHalfs();
     animateQuotes();
+    animateXmasHow();
+    animateHow();
+    createToolTip();
   }
 }
 
