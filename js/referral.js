@@ -1,7 +1,6 @@
 // @ts-check
 import { onAllPages } from "./utils/onAllPages.js";
 import { animateQuotes } from "./animations/animateQuotes.js";
-import { animateXmasHow } from "./animations/animateXmasHow.js";
 import { getScreenSize } from "./utils/getScreenSize.js";
 import { animateQuotesMobile } from "./animations/animateQuotesMobile.js";
 import { animateHow } from "./animations/animateHow.js";
@@ -22,7 +21,6 @@ function init() {
   // Only run on desktop
   if (!isMobile) {
     animateQuotes();
-    animateXmasHow();
     animateHow();
     createToolTip();
   }

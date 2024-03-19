@@ -24,3 +24,4 @@ https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/whatsIncluded.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/aboutUs.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/onAllPages.js
 https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/gift.js
+https://cdn.jsdelivr.net/gh/jannispaul/aware@latest/dist/js/referral.js
