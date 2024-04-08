@@ -47,13 +47,18 @@ export function cmsNest() {
       }
     });
 
+    // Check if url contains /de/
+    let url = window.location.href;
+    let isGerman = url.includes("/de/");
+
     // Count items in category and if there are no positions, hide the category
     targetList.forEach((list) => {
       let counter = list.parentNode.parentNode.querySelector("[data-element='list-count']");
       if (!counter) return;
       let numberOfItems = list.children.length;
       if (numberOfItems > 0) {
-        counter.innerText = list.children.length > 1 ? list.children.length.toString() + " biomarkers" : list.children.length.toString() + " biomarker";
+        // Create plural for biomarker (only in english)
+        counter.innerText = list.children.length > 1 && !isGerman ? list.children.length.toString() + " biomarkers" : list.children.length.toString() + " biomarker";
       } else {
         counter.remove();
       }
