@@ -1,0 +1,1 @@
+function r(l){const n=document.querySelectorAll('[fs-modal-element="open-2"]'),t=document.querySelectorAll('[data-element="marker-info"]'),e=document.querySelector('[data-element="modal-body"]');n.forEach(function(a,d){a.addEventListener("click",function(){const o=t[d];o&&(e.innerHTML="",e.appendChild(o.cloneNode(!0)))})})}export{r as u};
