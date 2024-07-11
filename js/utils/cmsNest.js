@@ -33,6 +33,7 @@ export function cmsNest() {
   function nestList(source, targetList) {
     // Get all items that have data-category set
     // data-category needs to be set on cms items
+    if (!source) return;
     const items = source.querySelectorAll("[data-category]");
     // const numberOfItems = items.length;
     // if (countIndicators) countIndicators[0].innerText = numberOfItems;
