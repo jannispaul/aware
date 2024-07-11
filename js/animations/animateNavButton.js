@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { gsap } from "https://cdn.skypack.dev/gsap@3.10.4";
+// import { gsap } from "https://cdn.skypack.dev/gsap@3.10.4";
 import { isMenuOpen } from "../utils/isMenuOpen";
 
 export function animateNavButton() {
