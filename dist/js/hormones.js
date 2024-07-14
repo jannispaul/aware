@@ -1,1 +1,1 @@
-import{c as o}from"./createToolTip.js";import{o as t,a as i}from"./onAllPages.js";import{u as a}from"./updateModalCopy.js";function e(){t(),a(),!i()&&o()}document.readyState=="loading"?document.addEventListener("DOMContentLoaded",e):e();
+import{u as o,c as t}from"./updateModalCopy.js";import{o as i,a}from"./onAllPages.js";function e(){i(),o(),!a()&&t()}document.readyState=="loading"?document.addEventListener("DOMContentLoaded",e):e();

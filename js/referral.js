@@ -7,12 +7,14 @@ import { animateHow } from "./animations/animateHow.js";
 import { cmsNest } from "./utils/cmsNest.js";
 import { createToolTip } from "./utils/createToolTip.js";
 import { tabsListCount } from "./utils/tabsListCount.js";
+import { updateModalCopy } from "./utils/updateModalCopy.js";
 
 function init() {
   let isMobile = getScreenSize();
   onAllPages();
   cmsNest();
   tabsListCount();
+  updateModalCopy();
 
   // Only run on mobile
   if (isMobile) {
@@ -21,7 +23,7 @@ function init() {
   // Only run on desktop
   if (!isMobile) {
     animateQuotes();
-    animateHow();
+    // animateHow();
     createToolTip();
   }
 }
