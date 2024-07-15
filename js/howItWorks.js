@@ -1,12 +1,12 @@
 // @ts-check
 
-import { animateImageScale } from "./animations/animateImageScale.js";
-import { onAllPages } from "./utils/onAllPages.js";
 import { cmsNest } from "./utils/cmsNest.js";
-import { tabsListCount } from "./utils/tabsListCount.js";
-import { updateModalCopy } from "./utils/updateModalCopy.js";
 import { createToolTip } from "./utils/createToolTip.js";
 import { getScreenSize } from "./utils/getScreenSize.js";
+import { onAllPages } from "./utils/onAllPages.js";
+import { tabsListCount } from "./utils/tabsListCount.js";
+import { updateModalCopy } from "./utils/updateModalCopy.js";
+import { animateImageScale } from "./animations/animateImageScale.js";
 
 function init() {
   animateImageScale();

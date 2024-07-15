@@ -32,7 +32,7 @@ export default defineConfig({
         referral: "js/referral.js",
         referralProgram: "js/referralProgram.js",
         hormones: "js/hormones.js",
-        // onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
+        onAllPages: "js/utils/onAllPages.js", // Not sure if this is necessary
       },
       output: {
         entryFileNames: `js/[name].js`,
